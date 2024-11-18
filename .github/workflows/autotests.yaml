@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  ftrackertest:
+  todolist-tests:
     runs-on: ubuntu-latest
     container: golang:1.21
 
