@@ -10,7 +10,7 @@ jobs:
 
   todolist-tests:
     runs-on: ubuntu-latest
-    container: golang:1.21
+    container: golang:1.23
 
     steps:
       - name: Checkout code
@@ -18,4 +18,5 @@ jobs:
 
       - name: Go test
         run: |
-          go test -v ./...
+          go mod tidy
+          go test -test.v ./...
