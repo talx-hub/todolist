@@ -35,12 +35,12 @@ func (t InMemoryTasks) Post(task model.Task) error {
 		t[task.ID] = task
 		return nil
 	}
-	return fmt.Errorf("id already exists")
+	return fmt.Errorf("task already exists")
 }
 
 func (t InMemoryTasks) Delete(id string) error {
 	if _, ok := t[id]; !ok {
-		return fmt.Errorf("id not found %s", id)
+		return fmt.Errorf("id not found: %s", id)
 	}
 	delete(t, id)
 	return nil

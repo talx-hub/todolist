@@ -39,15 +39,18 @@ func prepare() *api.Handler {
 	return api.New(todoList)
 }
 
-func main() {
+func TaskRouter() chi.Router {
 	handlers := prepare()
-	r := chi.NewRouter()
-	r.Get("/tasks", handlers.GetTasks)
-	r.Get("/tasks/{id}", handlers.GetTask)
-	r.Post("/tasks", handlers.PostTask)
-	r.Delete("/tasks/{id}", handlers.DeleteTask)
+	router := chi.NewRouter()
+	router.Get("/tasks", handlers.GetTasks)
+	router.Get("/tasks/{id}", handlers.GetTask)
+	router.Post("/tasks", handlers.PostTask)
+	router.Delete("/tasks/{id}", handlers.DeleteTask)
+	return router
+}
 
-	if err := http.ListenAndServe(":8080", r); err != nil {
+func main() {
+	if err := http.ListenAndServe(":8080", TaskRouter()); err != nil {
 		fmt.Printf("Ошибка при запуске сервера: %s", err.Error())
 		return
 	}
