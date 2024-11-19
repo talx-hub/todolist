@@ -7,8 +7,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/service"
+	"github.com/talx-hub/todolist/internal/model"
+	"github.com/talx-hub/todolist/internal/service"
 )
 
 type Handler struct {

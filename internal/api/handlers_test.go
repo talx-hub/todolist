@@ -3,17 +3,19 @@ package api
 import (
 	"context"
 	"encoding/json"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/repo"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/service"
-	"github.com/go-chi/chi/v5"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
+	"github.com/talx-hub/todolist/internal/model"
+	"github.com/talx-hub/todolist/internal/repo"
+	"github.com/talx-hub/todolist/internal/service"
 )
 
 func prepareHandlers() []*Handler {

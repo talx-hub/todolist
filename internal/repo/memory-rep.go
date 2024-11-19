@@ -2,7 +2,8 @@ package repo
 
 import (
 	"fmt"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
+
+	"github.com/talx-hub/todolist/internal/model"
 )
 
 type Repository interface {

@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/api"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/repo"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/service"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+
+	"github.com/talx-hub/todolist/internal/api"
+	"github.com/talx-hub/todolist/internal/repo"
+	"github.com/talx-hub/todolist/internal/service"
 )
 
 func prepare() *api.Handler {

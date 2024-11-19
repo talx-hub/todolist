@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/repo"
+	"github.com/talx-hub/todolist/internal/model"
+	"github.com/talx-hub/todolist/internal/repo"
 )
 
 type TodoList struct {

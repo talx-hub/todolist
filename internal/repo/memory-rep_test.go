@@ -1,11 +1,13 @@
 package repo
 
 import (
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
+	"github.com/talx-hub/todolist/internal/model"
 )
 
 func TestGetAll(t *testing.T) {
