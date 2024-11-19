@@ -3,11 +3,12 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
-	"github.com/Yandex-Practicum/go-rest-api-homework/internal/service"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+
+	"github.com/Yandex-Practicum/go-rest-api-homework/internal/model"
+	"github.com/Yandex-Practicum/go-rest-api-homework/internal/service"
 )
 
 type Handler struct {
@@ -57,7 +58,10 @@ func (h *Handler) PostTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	h.service.Put(task)
+	if err := h.service.Post(task); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)

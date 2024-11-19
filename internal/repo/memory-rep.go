@@ -8,7 +8,7 @@ import (
 type Repository interface {
 	GetAll() []model.Task
 	Get(id string) (model.Task, error)
-	Put(task model.Task)
+	Post(task model.Task) error
 	Delete(id string) error
 }
 
@@ -30,9 +30,12 @@ func (t InMemoryTasks) Get(id string) (model.Task, error) {
 	return task, nil
 }
 
-func (t InMemoryTasks) Put(task model.Task) {
-	id := task.ID
-	t[id] = task
+func (t InMemoryTasks) Post(task model.Task) error {
+	if _, ok := t[task.ID]; !ok {
+		t[task.ID] = task
+		return nil
+	}
+	return fmt.Errorf("id already exists")
 }
 
 func (t InMemoryTasks) Delete(id string) error {

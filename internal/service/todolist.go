@@ -21,8 +21,8 @@ func (l *TodoList) Get(id string) (model.Task, error) {
 	return l.repo.Get(id)
 }
 
-func (l *TodoList) Put(task model.Task) {
-	l.repo.Put(task)
+func (l *TodoList) Post(task model.Task) error {
+	return l.repo.Post(task)
 }
 
 func (l *TodoList) Delete(id string) error {
